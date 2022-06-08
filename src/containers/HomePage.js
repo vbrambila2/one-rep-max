@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-// import FabButton from '../components/FabButton';
+import FabButton from '../components/FabButton';
 // import MovementList from './MovementList';
 // import MovementsList from './FetchedMovements';
  
@@ -27,7 +27,7 @@ const HomePage = (props) => {
                 {/* <MovementsList />
                 <MovementList /> */}
             </div>
-            {/* <FabButton /> */}
+            <FabButton />
        </div>
    );
 };
