@@ -1,5 +1,5 @@
 import React from 'react';
-//import Header from '../components/Header';
+import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 // import FabButton from '../components/FabButton';
 // import MovementList from './MovementList';
@@ -22,7 +22,7 @@ const HomePage = (props) => {
    return (
        <div className={classes.homePageContent} >
            Home Page
-            {/* <Header title={"One Rep  Max"}/> */}
+            <Header title={"One Rep  Max"}/>
             <div>
                 {/* <MovementsList />
                 <MovementList /> */}
