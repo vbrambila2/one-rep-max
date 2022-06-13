@@ -13,6 +13,9 @@ const useStyles = makeStyles(() => ({
    },
    newDiv: {
        marginTop: '100px'
+   },
+   moveList: {
+       marginTop: '7rem'
    }
 }));
 
@@ -21,9 +24,8 @@ const HomePage = (props) => {
 
    return (
        <div className={classes.homePageContent} >
-           Home Page
             <Header title={"One Rep Max"} titleCaption={"- Percentage Calculator -"}/>
-            <div>
+            <div className={classes.moveList}>
                 <MovementList />
             </div>
             <FabButton />

@@ -88,7 +88,7 @@ const AddPage = () => {
         dispatch(createMovement(moveData));
         navigate("/");
     };
-    
+
     return (
         <div>
             <Header title={"Add Movement"} />
@@ -134,18 +134,17 @@ const AddPage = () => {
 };
 
 const mapStateToProps = state => {
-    console.log(state.moveReducer, "state")
     return {
       move: state.moveReducer
     }
   };
   
-  const mapDispatchToProps = dispatch => {
-    return {
-      createMovement: () => {
-        dispatch(createMovement())
-      }
+const mapDispatchToProps = dispatch => {
+return {
+    createMovement: () => {
+    dispatch(createMovement())
     }
-  }
+}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddPage);
