@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import history from '../history';
+//import history from '../history';
 import AddPage from './AddPage';
 import HomePage from './HomePage';
 // import MovementPage from './MovementPage';

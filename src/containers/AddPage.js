@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-//import { useDispatch } from 'react-redux';
-//import { createMovement } from '../actions';
+import { useDispatch } from 'react-redux';
+import { createMovement } from '../actions';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
-//import AddIcon from '@material-ui/icons/Add';
+import AddIcon from '@mui/icons-material/Add';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     addPage: {
@@ -78,12 +79,13 @@ const useStyles = makeStyles((theme) => ({
 const AddPage = () => {
     const classes = useStyles();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        //dispatch(createMovement(moveData));
+        dispatch(createMovement(moveData));
     };
+    console.log(moveData, "moveData")
 
     return (
         <div>
@@ -113,7 +115,14 @@ const AddPage = () => {
                             />
                         </div>
                          <div className={classes.buttonDiv}>
-                            <Button className={classes.addButton} variant="contained" type="submit" fullWidth >Submit</Button>
+                            <Button 
+                                className={classes.addButton} 
+                                variant="contained" 
+                                type="submit" 
+                                endIcon={<AddIcon />} 
+                                fullWidth >
+                                Submit
+                            </Button>
                          </div>
                     </form>
                 </div>
@@ -122,4 +131,19 @@ const AddPage = () => {
     );
 };
 
-export default AddPage;
+const mapStateToProps = state => {
+    console.log(state.moveReducer, "state")
+    return {
+      move: state.moveReducer
+    }
+  };
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      createMovement: () => {
+        dispatch(createMovement())
+      }
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddPage);

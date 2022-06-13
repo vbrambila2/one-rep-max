@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FabButton = () => {
     const classes = useStyles();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     
     return (
         <div className={classes.fabDiv} >
