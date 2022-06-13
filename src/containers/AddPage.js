@@ -88,6 +88,18 @@ const AddPage = () => {
         dispatch(createMovement(moveData));
         navigate("/");
     };
+    const onChangeName = (e) => {
+        const re = /^[a-zA-Z]*$/;
+        if (e.target.value === '' || re.test(e.target.value)) {
+           setMoveData({ ...moveData, movementName: e.target.value })
+        }
+    };
+    const onChangeWeight = (e) => {
+        const re = /^[0-9\b]+$/;
+        if (e.target.value === '' || re.test(e.target.value)) {
+           setMoveData({ ...moveData, movementWeight: e.target.value })
+        }
+    };
 
     return (
         <div>
@@ -103,7 +115,7 @@ const AddPage = () => {
                                 label="Movement Name" 
                                 style={{ width:200 }}
                                 value={moveData.movementName}
-                                onChange={(e) => setMoveData({ ...moveData, movementName: e.target.value })}
+                                onChange={onChangeName}
                             />
                             <TextField
                                 className={classes.textFieldDiv}
@@ -113,7 +125,7 @@ const AddPage = () => {
                                 style={{ width:200 }} 
                                 value={moveData.movementWeight}
                                 InputProps={{endAdornment: <InputAdornment position="end">lb</InputAdornment>}}
-                                onChange={(e) => setMoveData({ ...moveData, movementWeight: e.target.value })}
+                                onChange={onChangeWeight}
                             />
                         </div>
                          <div className={classes.buttonDiv}>
