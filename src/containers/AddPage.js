@@ -6,6 +6,7 @@ import { createMovement } from '../actions';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
 import AddIcon from '@mui/icons-material/Add';
 import { connect } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     addPage: {
@@ -80,13 +81,14 @@ const AddPage = () => {
     const classes = useStyles();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
 
         dispatch(createMovement(moveData));
+        navigate("/");
     };
-    console.log(moveData, "moveData")
-
+    
     return (
         <div>
             <Header title={"Add Movement"} />

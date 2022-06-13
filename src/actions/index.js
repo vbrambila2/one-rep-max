@@ -1,7 +1,9 @@
 import { CREATE_MOVEMENT } from "./constants";
+import history from "../history";
 
 export function createMovement(move) {
-    console.log(move, "action");
+    history.push("/")
+    
     return {
         type: CREATE_MOVEMENT,
         payload: move
