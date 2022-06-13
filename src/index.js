@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './containers/App';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
+// import history from './history';
 // import { Provider } from 'react-redux';
 // import { createStore, applyMiddleware, compose } from 'redux';
 // import rootReducer from './reducers';
@@ -23,9 +24,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //  <Provider store={store} >
       // <PersistGate persistor={persistor}>
-      <BrowserRouter>
+      // <BrowserRouter history={history}>
         <App />
-      </BrowserRouter>
+       //</BrowserRouter>
       // </PersistGate>
   //  </Provider>
 );

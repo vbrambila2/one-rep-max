@@ -22,7 +22,7 @@ const HomePage = (props) => {
    return (
        <div className={classes.homePageContent} >
            Home Page
-            <Header title={"One Rep  Max"}/>
+            <Header title={"One Rep Max"} titleCaption={"- Percentage Calculator -"}/>
             <div>
                 {/* <MovementsList />
                 <MovementList /> */}

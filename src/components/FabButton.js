@@ -1,8 +1,7 @@
-import history from '../history';
 import Fab from '@material-ui/core/Fab';
-//mport AddIcon from '@material-ui/icons/Add';
 import AddIcon from '@mui/icons-material/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     fabDiv: {
@@ -21,12 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 const FabButton = () => {
     const classes = useStyles();
+    let navigate = useNavigate();
     
     return (
         <div className={classes.fabDiv} >
              <Fab 
                 className={classes.fab}
-                onClick={() => history.push(`/add`)}>  
+                onClick={() => navigate(`/add`)}>  
                 <AddIcon />      
             </Fab>
         </div>   
