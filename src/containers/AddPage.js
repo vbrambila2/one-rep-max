@@ -85,9 +85,15 @@ const AddPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createMovement(moveData));
-        navigate("/");
+        if (moveData.movementName === "" || moveData.movementWeight === "") {
+            //alert('Please add a name and/or weight')
+            console.log("error")
+        } else {
+            dispatch(createMovement(moveData));
+            navigate("/");
+        }
     };
+
     const onChangeName = (e) => {
         const re = /^[a-zA-Z]*$/;
         if (e.target.value === '' || re.test(e.target.value)) {

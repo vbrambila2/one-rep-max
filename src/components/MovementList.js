@@ -33,15 +33,23 @@ const MovementList = (props) => {
             <Button
                 key={movement.movementName}
                 className={classes.movementButtons} 
+                //onClick={() => history.push(`/movement/${movement._id}/${movement.movementName}/${movement.movementWeight}`)}
             >
             {movement.movementName} - {movement.movementWeight}
             </Button>
         )
     })
+    const displayMovementButtons = () => {
+        if (mapMoves.length === 0) {    
+            return <div className={classes.noMovementsMessage} >Click add button to begin</div> 
+        };
 
-    return (
-        <div>{mapMoves}</div>
-    )
+        return (
+            <div>{mapMoves}</div>
+        )
+    }
+
+    return <div>{displayMovementButtons()}</div>
 };
 
 const mapStateToProps = state => {
