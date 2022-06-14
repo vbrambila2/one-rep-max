@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MovementButtons = (props) => {
     const classes = useStyles();
+    const navigate = useNavigate();
     const {
         move
     } = props;
@@ -33,7 +35,7 @@ const MovementButtons = (props) => {
             <Button
                 key={movement.movementName}
                 className={classes.movementButtons} 
-                //onClick={() => history.push(`/movement/${movement._id}/${movement.movementName}/${movement.movementWeight}`)}
+                onClick={() => navigate(`/movement/${movement.movementName}/${movement.movementWeight}`)}
             >
             {movement.movementName} - {movement.movementWeight}
             </Button>
