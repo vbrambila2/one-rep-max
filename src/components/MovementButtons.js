@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const MovementList = (props) => {
+const MovementButtons = (props) => {
     const classes = useStyles();
     const {
         move
@@ -64,4 +64,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovementList);
+export default connect(mapStateToProps, mapDispatchToProps)(MovementButtons);

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
-import MovementList from '../components/MovementList';
+import MovementButtons from '../components/MovementButtons';
 // import MovementsList from './FetchedMovements';
  
 const useStyles = makeStyles(() => ({
@@ -26,7 +26,7 @@ const HomePage = (props) => {
        <div className={classes.homePageContent} >
             <Header title={"One Rep Max"} titleCaption={"- Percentage Calculator -"}/>
             <div className={classes.moveList}>
-                <MovementList />
+                <MovementButtons />
             </div>
             <FabButton />
        </div>
