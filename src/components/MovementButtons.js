@@ -34,7 +34,8 @@ const MovementButtons = (props) => {
             <Button
                 key={movement.movementName}
                 className={classes.movementButtons} 
-                onClick={() => navigate(`/movement/${movement.movementName}/${movement.movementWeight}`)}
+                onClick={() => navigate(`/movement/${movement.movementName}/${movement.movementWeight}`, 
+                {state: {movementName: movement.movementName, movementWeight: movement.movementWeight}})}
             >
             {movement.movementName} - {movement.movementWeight}
             </Button>

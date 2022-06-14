@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import PercentChart from '../components/PercentChart';
-import { useLocation } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 
@@ -21,6 +21,7 @@ const PercentPage = (props) => {
         move
     } = props;
     const location = useLocation();
+    console.log(location.state, "location")
     const pathArray = location.pathname.split('/');
     const movementNameURL = (pathArray[2]);
     const notFound = () => {
@@ -32,12 +33,12 @@ const PercentPage = (props) => {
             )
         }
         
-        return <PercentChart move={move} />
+        return <PercentChart move={location.state} />
     };
 
     return (
         <div>
-            <Header title={movementNameURL} />
+            <Header title={location.state.movementName} />
             {notFound()}
         </div>
     );

@@ -68,10 +68,10 @@ const useStyles = makeStyles((theme) => ({
 
 const PercentChart = (props) => {
     const classes = useStyles();
-    const location = useLocation();
-    const pathArray = location.pathname.split('/');
-    const movementNameURL = (pathArray[3]);
-    const [results, setResults] = useState([]);
+    // const location = useLocation();
+    // const pathArray = location.pathname.split('/');
+    // const movementNameURL = (pathArray[3]);
+    // const [results, setResults] = useState([]);
     const {
         move
     } = props;
@@ -84,7 +84,7 @@ const PercentChart = (props) => {
             //arr.push([percentage, (selected.movementWeight * percentage) / 100]);
             percentage -= 5;
         }
-        setResults(arr);
+        // setResults(arr);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -95,7 +95,7 @@ const PercentChart = (props) => {
 
         //return <div>{selected.movementWeight}</div>
     };
-
+console.log(move.movementName, "name")
     return (
         <div>
             <div className={classes.oneRepMaxWeight}>One Rep Max:
@@ -108,9 +108,9 @@ const PercentChart = (props) => {
             <div className={classes.oneRepMaxChart}>
                 <h1 className={classes.chartHeader} >Percent<div>Weight</div></h1>
                 <div>
-                    {results.map((result) => (
+                    {/* {results.map((result) => (
                         <div key={result[0]} className={classes.chartBox} >{result[0]}% <div>{result[1]}</div></div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </div>
