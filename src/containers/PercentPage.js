@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import PercentChart from '../components/PercentChart';
 import { useLocation } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     notFound: {
@@ -14,8 +15,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PercentPage = () => {
+const PercentPage = (props) => {
     const classes = useStyles();
+    const {
+        move
+    } = props;
     const location = useLocation();
     const pathArray = location.pathname.split('/');
     const movementNameURL = (pathArray[2]);
@@ -23,12 +27,12 @@ const PercentPage = () => {
         if (movementNameURL === undefined) {
             return (
                 <div className={classes.notFound} >
-                     Movement not found. Click Home button to return to Home Page.
+                    Movement not found. Click Home button to return to Home Page.
                 </div>
             )
         }
         
-        return <PercentChart />
+        return <PercentChart move={move} />
     };
 
     return (
@@ -39,4 +43,10 @@ const PercentPage = () => {
     );
 };
 
- export default (PercentPage);
+const mapStateToProps = (state) => {
+    return {
+        move: state.moveReducer,
+    }
+};
+
+ export default connect(mapStateToProps)(PercentPage);

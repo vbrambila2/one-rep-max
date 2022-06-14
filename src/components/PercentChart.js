@@ -72,7 +72,11 @@ const PercentChart = (props) => {
     const pathArray = location.pathname.split('/');
     const movementNameURL = (pathArray[3]);
     const [results, setResults] = useState([]);
-    //const selected = props.weight.find((e) => e.movementName === movementNameURL);
+    const {
+        move
+    } = props;
+    console.log(move, "move")
+    //const selected = props.move.find((e) => e.movementName === movementNameURL);
     useEffect(() => {
         const arr = [];
         let percentage = 100;
@@ -113,10 +117,4 @@ const PercentChart = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        weight: state.movements,
-    }
-};
-
-export default connect(mapStateToProps)(PercentChart);
+export default (PercentChart);

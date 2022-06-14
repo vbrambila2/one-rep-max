@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
@@ -21,16 +22,25 @@ const useStyles = makeStyles(() => ({
 
 const HomePage = (props) => {
     const classes = useStyles();
+    const {
+        move
+    } = props;
 
    return (
        <div className={classes.homePageContent} >
             <Header title={"One Rep Max"} titleCaption={"- Percentage Calculator -"}/>
             <div className={classes.moveList}>
-                <MovementButtons />
+                <MovementButtons move={move} />
             </div>
             <FabButton />
        </div>
    );
 };
 
-export default (HomePage);
+const mapStateToProps = state => {
+    return {
+      move: state.moveReducer
+    }
+  };
+
+export default connect(mapStateToProps)(HomePage);

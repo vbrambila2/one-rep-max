@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
@@ -54,16 +53,4 @@ const MovementButtons = (props) => {
     return <div>{displayMovementButtons()}</div>
 };
 
-const mapStateToProps = state => {
-    return {
-      move: state.moveReducer
-    }
-  };
-  
-const mapDispatchToProps = dispatch => {
-    return {
-    
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovementButtons);
+export default (MovementButtons);
