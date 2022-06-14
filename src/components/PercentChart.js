@@ -70,8 +70,7 @@ const PercentChart = (props) => {
     const {
         move
     } = props;
-    console.log(move, "move")
-    //const selected = props.move.find((e) => e.movementName === movementNameURL);
+
     useEffect(() => {
         const arr = [];
         let percentage = 100;
@@ -90,7 +89,7 @@ const PercentChart = (props) => {
 
         return <div>{move.movementWeight}</div>
     };
-console.log(move.movementName, "name")
+
     return (
         <div>
             <div className={classes.oneRepMaxWeight}>One Rep Max:
