@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PercentChart = (props) => {
     const classes = useStyles();
-    // const [results, setResults] = useState([]);
+    const [results, setResults] = useState([]);
     const {
         move
     } = props;
@@ -76,14 +76,14 @@ const PercentChart = (props) => {
         const arr = [];
         let percentage = 100;
         while (percentage > 50 ) {
-            //arr.push([percentage, (selected.movementWeight * percentage) / 100]);
+            arr.push([percentage, (move.movementWeight * percentage) / 100]);
             percentage -= 5;
         }
-        // setResults(arr);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        setResults(arr);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const displayWeight = () => {
+    const displayMax = () => {
         if (move.movementWeight.length === 0) {    
             return <div>No 1RM recorded</div> 
         };
@@ -94,7 +94,7 @@ console.log(move.movementName, "name")
     return (
         <div>
             <div className={classes.oneRepMaxWeight}>One Rep Max:
-                <div className={classes.oneRepMaxWeightNumber}>{displayWeight()}</div>
+                <div className={classes.oneRepMaxWeightNumber}>{displayMax()}</div>
             </div> 
             <div className={classes.buttons}>
                 {/* <UpdateButton />
@@ -103,9 +103,9 @@ console.log(move.movementName, "name")
             <div className={classes.oneRepMaxChart}>
                 <h1 className={classes.chartHeader} >Percent<div>Weight</div></h1>
                 <div>
-                    {/* {results.map((result) => (
+                    {results.map((result) => (
                         <div key={result[0]} className={classes.chartBox} >{result[0]}% <div>{result[1]}</div></div>
-                    ))} */}
+                    ))}
                 </div>
             </div>
         </div>
