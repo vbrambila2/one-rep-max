@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { useLocation } from 'react-router';
-import { connect } from 'react-redux';
 // import UpdateButton from './UpdateButton';
 // import DeleteButton from './DeleteButton';
 
@@ -68,9 +66,6 @@ const useStyles = makeStyles((theme) => ({
 
 const PercentChart = (props) => {
     const classes = useStyles();
-    // const location = useLocation();
-    // const pathArray = location.pathname.split('/');
-    // const movementNameURL = (pathArray[3]);
     // const [results, setResults] = useState([]);
     const {
         move
@@ -89,11 +84,11 @@ const PercentChart = (props) => {
     }, []);
 
     const displayWeight = () => {
-        // if (selected.movementWeight.length === 0) {    
-        //     return <div>No 1RM recorded</div> 
-        // };
+        if (move.movementWeight.length === 0) {    
+            return <div>No 1RM recorded</div> 
+        };
 
-        //return <div>{selected.movementWeight}</div>
+        return <div>{move.movementWeight}</div>
     };
 console.log(move.movementName, "name")
     return (
