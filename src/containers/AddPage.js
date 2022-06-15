@@ -159,11 +159,11 @@ const mapStateToProps = state => {
   };
   
 const mapDispatchToProps = dispatch => {
-return {
-    createMovement: () => {
-    dispatch(createMovement())
+    return {
+        createMovement: () => {
+        dispatch(createMovement())
+        }
     }
-}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddPage);

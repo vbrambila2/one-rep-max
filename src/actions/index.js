@@ -1,4 +1,4 @@
-import { CREATE_MOVEMENT } from "./constants";
+import { CREATE_MOVEMENT, UPDATE_MOVEMENT } from "./constants";
 import history from "../history";
 
 export function createMovement(move) {
@@ -8,4 +8,13 @@ export function createMovement(move) {
         type: CREATE_MOVEMENT,
         payload: move
     }
-}
+};
+
+export function updateMovement(move) {
+    //history.push("/")
+    
+    return {
+        type: UPDATE_MOVEMENT,
+        payload: move
+    }
+};

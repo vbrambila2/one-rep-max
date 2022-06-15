@@ -3,9 +3,9 @@ import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateMovement } from '../actions';
+import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
 import { useLocation } from 'react-router';
-//import LoopIcon from '@material-ui/icons/Loop';
 import LoopIcon from '@mui/icons-material/Loop';
 
 const useStyles = makeStyles((theme) => ({
@@ -81,20 +81,17 @@ const UpdatePage = () => {
     const location = useLocation();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
-    //const move = useSelector((state) => movementIDURL ? state.movements.find((p) => p._id === movementIDURL) : null);
+    let moveToUpdate = location.state.movementName;
+    console.log(moveToUpdate, "mtu");
 
-    // useEffect(() => {
-    //     if(move) setMoveData(move)
-    // }, [move]);
+    useEffect(() => {
+        if(moveToUpdate) setMoveData(moveToUpdate)
+    }, [moveToUpdate]);
     
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // if(movementIDURL) {
-        //     dispatch(updateMovement(movementIDURL, moveData));
-        // } else {
-        //     console.log("no currentId");
-        // }
+        dispatch(updateMovement(moveData));
     };
 
     return (
@@ -110,7 +107,7 @@ const UpdatePage = () => {
                                 variant="outlined"
                                 label="Movement Name" 
                                 style={{ width:200 }}
-                                //value={move.movementName}
+                                value={moveToUpdate}
                                 onChange={(e) => setMoveData({ ...moveData, movementName: e.target.value })}
                             />
                             <TextField
@@ -133,4 +130,19 @@ const UpdatePage = () => {
     );
 };
 
-export default UpdatePage;
+const mapStateToProps = state => {
+    console.log(state, "update");
+    return {
+      move: state.moveReducer
+    }
+  };
+  
+const mapDispatchToProps = dispatch => {
+    return {
+        updateMovement: () => {
+        dispatch(updateMovement())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UpdatePage);
