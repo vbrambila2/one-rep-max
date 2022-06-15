@@ -68,14 +68,15 @@ const PercentChart = (props) => {
     const classes = useStyles();
     const [results, setResults] = useState([]);
     const {
-        move
+        movement
     } = props;
+    console.log(movement, "movement in percent chart");
 
     useEffect(() => {
         const arr = [];
         let percentage = 100;
         while (percentage > 50 ) {
-            arr.push([percentage, (move.movementWeight * percentage) / 100]);
+            arr.push([percentage, (movement.movementWeight * percentage) / 100]);
             percentage -= 5;
         }
         setResults(arr);
@@ -83,11 +84,11 @@ const PercentChart = (props) => {
     }, []);
 
     const displayMax = () => {
-        if (move.movementWeight.length === 0) {    
+        if (!movement.movementWeight) {    
             return <div>No 1RM recorded</div> 
         };
 
-        return <div>{move.movementWeight}</div>
+        return <div>{movement.movementWeight}</div>
     };
 
     return (

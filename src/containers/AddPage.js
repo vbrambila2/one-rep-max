@@ -156,7 +156,7 @@ const mapStateToProps = state => {
     return {
       move: state.moveReducer
     }
-  };
+};
   
 const mapDispatchToProps = dispatch => {
     return {

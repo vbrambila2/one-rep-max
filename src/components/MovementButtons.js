@@ -28,6 +28,7 @@ const MovementButtons = (props) => {
     const {
         move
     } = props;
+    console.log(move, "homepage props")
 
     const mapMoves = move.map((movement) => {
         return (

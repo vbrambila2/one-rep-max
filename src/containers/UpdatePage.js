@@ -6,6 +6,7 @@ import { updateMovement } from '../actions';
 import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
 import { useLocation } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import LoopIcon from '@mui/icons-material/Loop';
 
 const useStyles = makeStyles((theme) => ({
@@ -79,19 +80,24 @@ const useStyles = makeStyles((theme) => ({
 const UpdatePage = () => {
     const classes = useStyles();
     const location = useLocation();
+    const navigate = useNavigate();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
     let moveToUpdate = location.state.movementName;
-    console.log(moveToUpdate, "mtu");
+    console.log(location.state.movementWeight, "l");
 
-    useEffect(() => {
-        if(moveToUpdate) setMoveData(moveToUpdate)
-    }, [moveToUpdate]);
+    const onChangeWeight = (e) => {
+        const re = /^[0-9\b]+$/;
+        if (e.target.value === '' || re.test(e.target.value)) {
+           setMoveData({ movementName: moveToUpdate, movementWeight: e.target.value })
+        }
+    };
     
     const handleSubmit = (e) => {
         e.preventDefault();
 
         dispatch(updateMovement(moveData));
+        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`)
     };
 
     return (
@@ -108,7 +114,6 @@ const UpdatePage = () => {
                                 label="Movement Name" 
                                 style={{ width:200 }}
                                 value={moveToUpdate}
-                                onChange={(e) => setMoveData({ ...moveData, movementName: e.target.value })}
                             />
                             <TextField
                                 className={classes.textFieldDiv}
@@ -117,11 +122,19 @@ const UpdatePage = () => {
                                 label="New One Rep Max" 
                                 style={{ width:200 }}
                                 InputProps={{endAdornment: <InputAdornment position="end">lb</InputAdornment>}}
-                                onChange={(e) => setMoveData({ ...moveData, movementWeight: e.target.value })}
+                                onChange={onChangeWeight}
                             />
                         </div>
                          <div className={classes.buttonDiv}>
-                            <Button className={classes.updateButton} variant="contained" type="submit" endIcon={<LoopIcon />} fullWidth >Update</Button>
+                            <Button 
+                                className={classes.updateButton} 
+                                variant="contained" 
+                                type="submit" 
+                                endIcon={<LoopIcon />} 
+                                fullWidth 
+                                >
+                                Update
+                                </Button>
                          </div>
                     </form>
                 </div>
@@ -131,7 +144,7 @@ const UpdatePage = () => {
 };
 
 const mapStateToProps = state => {
-    console.log(state, "update");
+    console.log(state.moveReducer, "updatePage state");
     return {
       move: state.moveReducer
     }
