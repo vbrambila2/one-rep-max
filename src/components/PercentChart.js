@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import UpdateButton from './UpdateButton';
+import UpdateButton from './UpdateButton';
 // import DeleteButton from './DeleteButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -96,8 +96,8 @@ const PercentChart = (props) => {
                 <div className={classes.oneRepMaxWeightNumber}>{displayMax()}</div>
             </div> 
             <div className={classes.buttons}>
-                {/* <UpdateButton />
-                <DeleteButton /> */}
+                <UpdateButton />
+                {/* <DeleteButton /> */}
             </div>
             <div className={classes.oneRepMaxChart}>
                 <h1 className={classes.chartHeader} >Percent<div>Weight</div></h1>

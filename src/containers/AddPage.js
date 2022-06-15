@@ -82,6 +82,7 @@ const AddPage = () => {
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    //todo fix handlesubmit function
     const handleSubmit = (e) => {
         e.preventDefault();
 
