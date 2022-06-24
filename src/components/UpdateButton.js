@@ -24,6 +24,7 @@ const UpdateButton = (props) => {
     const classes = useStyles();
     const navigate = useNavigate();
     const location = useLocation();
+    console.log(location.state, "updatebutton location");
 
     return (
         <Button 

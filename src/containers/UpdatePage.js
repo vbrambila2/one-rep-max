@@ -83,7 +83,7 @@ const UpdatePage = () => {
     const navigate = useNavigate();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
-    let moveToUpdate = location.state.movementName;
+    const moveToUpdate = location.state.movementName;
     console.log(location.state.movementWeight, "l");
 
     const onChangeWeight = (e) => {
@@ -97,7 +97,8 @@ const UpdatePage = () => {
         e.preventDefault();
 
         dispatch(updateMovement(moveData));
-        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`)
+        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`, 
+        {state: {movementName: moveData.movementName, movementWeight: moveData.movementWeight}})
     };
 
     return (
