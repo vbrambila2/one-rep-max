@@ -87,8 +87,7 @@ const AddPage = () => {
         e.preventDefault();
 
         if (moveData.movementName === "" || moveData.movementWeight === "") {
-            //alert('Please add a name and/or weight')
-            console.log("error")
+            alert('Please add a name and/or weight');
         } else {
             dispatch(createMovement(moveData));
             navigate("/");

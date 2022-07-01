@@ -70,7 +70,6 @@ const PercentChart = (props) => {
     const {
         movement
     } = props;
-    console.log(movement, "movement in percent chart");
 
     useEffect(() => {
         const arr = [];

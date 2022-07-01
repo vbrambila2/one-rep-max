@@ -80,7 +80,6 @@ const useStyles = makeStyles((theme) => ({
 const UpdatePage = (props) => {
     const {
         move,
-        movement
     } = props;
     const classes = useStyles();
     const location = useLocation();
@@ -88,8 +87,6 @@ const UpdatePage = (props) => {
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
     const moveToUpdate = move.movementName;
-    console.log(move, "updatepge move");
-    console.log(location.state.movement, "update page location");
 
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
@@ -100,7 +97,7 @@ const UpdatePage = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(moveData, "moveData update page");
+
         dispatch(updateMovement(moveData));
         navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`, { state: { movementName: location.state.movement.movementName, movementWeight: moveData.movementWeight } });
     };

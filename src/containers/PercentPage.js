@@ -21,8 +21,6 @@ const PercentPage = (props) => {
     const {
         move
     } = props;
-    console.log(location.state, "location in percent page");
-    console.log(move, "move in percent page");
 
     const headerTitle = () => {
         if (location.state === null) {
@@ -52,8 +50,6 @@ const PercentPage = (props) => {
         } else {
             return <PercentChart movement={switchBaby()} />
         }
-        
-        //return <PercentChart movement={switchBaby()} />
     };
 
     return (

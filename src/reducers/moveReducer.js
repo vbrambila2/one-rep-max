@@ -8,8 +8,6 @@ const moveReducer = (state = initialState, action) => {
             return [ ...state, action.payload ];
         case UPDATE_MOVEMENT:
             return state.map((move) => move.movementName === action.payload.movementName ? action.payload : move);
-            // console.log(state, "reducer");
-            // return action.payload;
         default: return state;
     }
 }
