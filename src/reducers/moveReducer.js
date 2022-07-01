@@ -7,8 +7,9 @@ const moveReducer = (state = initialState, action) => {
         case CREATE_MOVEMENT:
             return [ ...state, action.payload ];
         case UPDATE_MOVEMENT:
-            // return state.map((move) => move.movementName === action.payload.movementName ? action.payload : move);
-            return action.payload
+            return state.map((move) => move.movementName === action.payload.movementName ? action.payload : move);
+            // console.log(state, "reducer");
+            // return action.payload;
         default: return state;
     }
 }

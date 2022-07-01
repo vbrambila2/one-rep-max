@@ -77,28 +77,32 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const UpdatePage = () => {
+const UpdatePage = (props) => {
+    const {
+        move,
+        movement
+    } = props;
     const classes = useStyles();
     const location = useLocation();
     const navigate = useNavigate();
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
-    const moveToUpdate = location.state.movementName;
-    console.log(location.state.movementWeight, "l");
+    const moveToUpdate = move.movementName;
+    console.log(move, "updatepge move");
+    console.log(location.state.movement, "update page location");
 
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setMoveData({ movementName: moveToUpdate, movementWeight: e.target.value })
+           setMoveData({ movementName: location.state.movement.movementName, movementWeight: e.target.value })
         }
     };
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        console.log(moveData, "moveData update page");
         dispatch(updateMovement(moveData));
-        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`, 
-        {state: {movementName: moveData.movementName, movementWeight: moveData.movementWeight}})
+        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`, { state: { movementName: location.state.movement.movementName, movementWeight: moveData.movementWeight } });
     };
 
     return (
@@ -114,7 +118,7 @@ const UpdatePage = () => {
                                 variant="outlined"
                                 label="Movement Name" 
                                 style={{ width:200 }}
-                                value={moveToUpdate}
+                                value={location.state.movement.movementName}
                             />
                             <TextField
                                 className={classes.textFieldDiv}
@@ -145,7 +149,6 @@ const UpdatePage = () => {
 };
 
 const mapStateToProps = state => {
-    console.log(state.moveReducer, "updatePage state");
     return {
       move: state.moveReducer
     }

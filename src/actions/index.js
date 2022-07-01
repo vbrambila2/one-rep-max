@@ -11,7 +11,6 @@ export function createMovement(move) {
 };
 
 export function updateMovement(move) {
-    console.log(move, "in update action");
     
     return {
         type: UPDATE_MOVEMENT,

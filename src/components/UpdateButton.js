@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UpdateButton = (props) => {
+    const {
+        movement
+    } = props;
+    console.log(movement, "movement in UpdateButton");
     const classes = useStyles();
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,8 +33,7 @@ const UpdateButton = (props) => {
     return (
         <Button 
             className={classes.updateButton}
-            onClick={() => navigate(`/update/${location.state.movementName}`,
-            {state: {movementName: location.state.movementName, movementWeight: location.state.movementWeight}})}
+            onClick={() => navigate(`/update/${location.state.movementName}`, {state: {movement}})}
         >
         Update
         </Button> 
