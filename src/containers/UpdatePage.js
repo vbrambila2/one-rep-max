@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateMovement } from '../actions';
 import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
@@ -77,21 +77,19 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const UpdatePage = (props) => {
-    const {
-        move,
-    } = props;
+const UpdatePage = () => {
     const classes = useStyles();
     const location = useLocation();
     const navigate = useNavigate();
-    const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const dispatch = useDispatch(); 
-    const moveToUpdate = move.movementName;
+    const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
+    const moveName = location.state.movement.movementName;
+    const moveWeight = location.state.movementWeight;
 
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setMoveData({ movementName: location.state.movement.movementName, movementWeight: e.target.value })
+           setMoveData({ movementName: moveName, movementWeight: e.target.value })
         }
     };
     
@@ -99,7 +97,7 @@ const UpdatePage = (props) => {
         e.preventDefault();
 
         dispatch(updateMovement(moveData));
-        navigate(`/movement/${moveToUpdate}/${location.state.movementWeight}}`, { state: { movementName: location.state.movement.movementName, movementWeight: moveData.movementWeight } });
+        navigate(`/movement/${moveName}/${moveWeight}}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
     };
 
     return (
@@ -115,7 +113,7 @@ const UpdatePage = (props) => {
                                 variant="outlined"
                                 label="Movement Name" 
                                 style={{ width:200 }}
-                                value={location.state.movement.movementName}
+                                value={moveName}
                             />
                             <TextField
                                 className={classes.textFieldDiv}
@@ -144,19 +142,13 @@ const UpdatePage = (props) => {
         </div>
     );
 };
-
-const mapStateToProps = state => {
-    return {
-      move: state.moveReducer
-    }
-  };
   
 const mapDispatchToProps = dispatch => {
     return {
         updateMovement: () => {
-        dispatch(updateMovement())
+            dispatch(updateMovement())
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpdatePage);
+export default connect(mapDispatchToProps)(UpdatePage);

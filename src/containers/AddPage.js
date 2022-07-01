@@ -97,13 +97,13 @@ const AddPage = () => {
     const onChangeName = (e) => {
         const re = /^[a-zA-Z]*$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setMoveData({ ...moveData, movementName: e.target.value })
+            setMoveData({ ...moveData, movementName: e.target.value })
         }
     };
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setMoveData({ ...moveData, movementWeight: e.target.value })
+            setMoveData({ ...moveData, movementWeight: e.target.value })
         }
     };
 
@@ -153,14 +153,14 @@ const AddPage = () => {
 
 const mapStateToProps = state => {
     return {
-      move: state.moveReducer
+        move: state.moveReducer
     }
 };
   
 const mapDispatchToProps = dispatch => {
     return {
         createMovement: () => {
-        dispatch(createMovement())
+            dispatch(createMovement())
         }
     }
 }
