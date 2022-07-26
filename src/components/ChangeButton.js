@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
-    updateButton: {
+    changeButton: {
         borderRadius: '10px',
         width: '10%',
         textAlign: 'center',
@@ -20,9 +20,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const UpdateButton = (props) => {
+const ChangeButton = (props) => {
     const {
-        movement
+        movement,
+        buttonName
     } = props;
     const classes = useStyles();
     const navigate = useNavigate();
@@ -30,12 +31,12 @@ const UpdateButton = (props) => {
 
     return (
         <Button 
-            className={classes.updateButton}
+            className={classes.changeButton}
             onClick={() => navigate(`/update/${location.state.movementName}`, {state: {movement}})}
         >
-        Update
+        {buttonName}
         </Button> 
     )
 };
 
-export default UpdateButton;
+export default ChangeButton;
