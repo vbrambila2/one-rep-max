@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
 const ChangeButton = (props) => {
     const {
         movement,
-        buttonName
+        buttonName,
+        urlName
     } = props;
     const classes = useStyles();
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const ChangeButton = (props) => {
     return (
         <Button 
             className={classes.changeButton}
-            onClick={() => navigate(`/update/${location.state.movementName}`, {state: {movement}})}
+            onClick={() => navigate(`/${urlName}/${location.state.movementName}`, {state: {movement}})}
         >
         {buttonName}
         </Button> 

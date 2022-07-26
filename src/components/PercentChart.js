@@ -95,8 +95,8 @@ const PercentChart = (props) => {
                 <div className={classes.oneRepMaxWeightNumber}>{displayMax()}</div>
             </div> 
             <div className={classes.buttons}>
-                <ChangeButton movement={movement} buttonName="Update" />
-                {/* <DeleteButton /> */}
+                <ChangeButton movement={movement} buttonName="Update" urlName="update" />
+                <ChangeButton movement={movement} buttonName="Delete" urlName="delete" />
             </div>
             <div className={classes.oneRepMaxChart}>
                 <h1 className={classes.chartHeader} >Percent<div>Weight</div></h1>
