@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
         padding: '8px',
         borderRadius: '10px',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        fontFamily: 'PT Sans Caption',
     },
     buttonDiv: {
         paddingTop: '20px',
