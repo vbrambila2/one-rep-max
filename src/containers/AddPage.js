@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
             borderColor: "#00BFFF"
           },
           "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black"
+            borderColor: "#0080ff"
           },
           "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black"
+            borderColor: "#0080ff"
           },
           "& .MuiOutlinedInput-input": {
             color: "black"
@@ -51,10 +51,10 @@ const useStyles = makeStyles((theme) => ({
             color: "grey"
           },
           "&:hover .MuiInputLabel-outlined": {
-            color: "black"
+            color: "#0080ff"
           },
           "& .MuiInputLabel-outlined.Mui-focused": {
-            color: "black"
+            color: "#0080ff"
           }
     },
     addButton: {
