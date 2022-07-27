@@ -78,7 +78,7 @@ const DeletePage = (props) => {
         e.preventDefault();
 
         dispatch(deleteMovement(moveName));
-        console.log(moveName, "move name inside handle submit");
+        navigate("/");
     };
 
     return (

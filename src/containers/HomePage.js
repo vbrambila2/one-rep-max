@@ -25,6 +25,7 @@ const HomePage = (props) => {
     const {
         move
     } = props;
+    console.log(move);
 
    return (
        <div className={classes.homePageContent} >

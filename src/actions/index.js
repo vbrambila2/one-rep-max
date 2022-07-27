@@ -18,9 +18,6 @@ export function updateMovement(move) {
 };
 
 export function deleteMovement(move) {
-    history.push("/");
-    console.log(move, "action");
-
     return {
         type: DELETE_MOVEMENT,
         payload: move
