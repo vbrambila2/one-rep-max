@@ -7,6 +7,7 @@ import { deleteMovement } from '../actions/index';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router';
 import { Button } from '@material-ui/core';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const useStyles = makeStyles((theme) => ({
     deletePage: {
@@ -94,6 +95,7 @@ const DeletePage = (props) => {
                                 className={classes.updateButton} 
                                 variant="contained" 
                                 type="submit" 
+                                endIcon={<DeleteIcon />}
                                 fullWidth 
                                 >
                                 Delete
