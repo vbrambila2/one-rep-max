@@ -5,11 +5,13 @@ import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     movementButtons: {
+        background: '#00BFFF',
+        color: '#F8F8F8',
+        textShadow: '1px 1px #000000',
         fontFamily: 'PT Sans Caption',
         marginTop: '30px',
         borderRadius: '10px',
-        background: '#C4C4C4',
-        boxShadow: '0px 2px 2px #A9A9A9',
+        boxShadow: '0px 2px 2px #006bb3',
         width: '400px',
         display: 'flex',
         flexDirection: 'column',
