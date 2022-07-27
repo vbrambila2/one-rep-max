@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-//import { deleteMovement } from '../actions/index';
+import { deleteMovement } from '../actions/index';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router';
 import { Button } from '@material-ui/core';
@@ -14,16 +16,18 @@ const useStyles = makeStyles((theme) => ({
     },
     deleteMovementDiv: {
         background: '#0080ff',
-        fontFamily: 'PT Sans Caption',
         fontSize: '18px',
         borderRadius: '10px',
         padding: '20px',
         marginTop: '50px',
+        width: '300px'
     },
     textDiv: {
         background: '#ffffff',
         padding: '8px',
         borderRadius: '10px',
+        display: 'flex',
+        justifyContent: 'center'
     },
     buttonDiv: {
         paddingTop: '20px',
@@ -33,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '2px 2px 1px #006bb3',
         color: '#F8F8F8',
         textShadow: '1px 1px #000000',
-        fontFamily: 'PT Sans Caption',
         '&:hover': {
             backgroundColor: '#00ace6',
         },
@@ -64,34 +67,50 @@ const renderInputName = ({ input, label }) => {
 const DeletePage = (props) => {
     const classes = useStyles();
     const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch(); 
+    const moveName = location.state.movement.movementName;
 
 
  
  
-    const handleSubmit = (formValues) => {
-       
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        dispatch(deleteMovement(moveName));
+        console.log(moveName, "move name inside handle submit");
     };
 
     return (
         <div>
             <Header title="Delete Movement" />
             <div className={classes.deletePage} >
-                <div className={classes.deleteMovementDiv} >Hello</div>
+                <div className={classes.deleteMovementDiv} >
+                    <form onSubmit={handleSubmit}>
+                        <div className={classes.textDiv}>{moveName}</div>
+                        <div className={classes.buttonDiv}>
+                            <Button 
+                                className={classes.updateButton} 
+                                variant="contained" 
+                                type="submit" 
+                                fullWidth 
+                                >
+                                Delete
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
 };
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
     return {
-        move: state.move,
-    };
-  };
+        deleteMovement: () => {
+            dispatch(deleteMovement())
+        }
+    }
+}
 
-//   const mapDispatchToProps = (dispatch) => {
-//     return({
-//         deleteMovement: (selectedID, formValues) => dispatch(deleteMovement(selectedID, formValues)),
-//     })
-// };
-
-export default connect(mapStateToProps)(DeletePage);
+export default connect(mapDispatchToProps)(DeletePage);

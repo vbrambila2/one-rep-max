@@ -1,8 +1,8 @@
-import { CREATE_MOVEMENT, UPDATE_MOVEMENT } from "./constants";
+import { CREATE_MOVEMENT, DELETE_MOVEMENT, UPDATE_MOVEMENT } from "./constants";
 import history from "../history";
 
 export function createMovement(move) {
-    history.push("/")
+    history.push("/");
     
     return {
         type: CREATE_MOVEMENT,
@@ -11,9 +11,18 @@ export function createMovement(move) {
 };
 
 export function updateMovement(move) {
-    
     return {
         type: UPDATE_MOVEMENT,
+        payload: move
+    }
+};
+
+export function deleteMovement(move) {
+    history.push("/");
+    console.log(move, "action");
+
+    return {
+        type: DELETE_MOVEMENT,
         payload: move
     }
 };

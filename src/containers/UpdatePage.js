@@ -125,7 +125,7 @@ const UpdatePage = () => {
                                 onChange={onChangeWeight}
                             />
                         </div>
-                         <div className={classes.buttonDiv}>
+                        <div className={classes.buttonDiv}>
                             <Button 
                                 className={classes.updateButton} 
                                 variant="contained" 
@@ -134,8 +134,8 @@ const UpdatePage = () => {
                                 fullWidth 
                                 >
                                 Update
-                                </Button>
-                         </div>
+                            </Button>
+                        </div>
                     </form>
                 </div>
             </div>
