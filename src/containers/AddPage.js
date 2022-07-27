@@ -95,7 +95,7 @@ const AddPage = () => {
     };
 
     const onChangeName = (e) => {
-        const re = /^[a-zA-Z]*$/;
+        const re = /^\b[a-zA-Z ]{0,20}$/;
         if (e.target.value === '' || re.test(e.target.value)) {
             setMoveData({ ...moveData, movementName: e.target.value })
         }
