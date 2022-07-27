@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-//import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import FitnessCenter from '@mui/icons-material/FitnessCenter';
-//import { useHistory } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
     homeHeader: {

@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
         width: '400px',
         display: 'flex',
         flexDirection: 'column',
+        '&:hover': {
+            backgroundColor: '#0099cc',
+        },
     },
     noMovementsMessage: {
         marginTop: '130px',
