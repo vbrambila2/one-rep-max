@@ -24,7 +24,7 @@ const FabButton = () => {
     
     return (
         <div className={classes.fabDiv} >
-             <Fab 
+            <Fab 
                 className={classes.fab}
                 onClick={() => navigate(`/add`)}>  
                 <AddIcon />      
