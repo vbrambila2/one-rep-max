@@ -92,12 +92,17 @@ const UpdatePage = () => {
            setMoveData({ movementName: moveName, movementWeight: e.target.value })
         }
     };
+    console.log(moveData, "onw");
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        dispatch(updateMovement(moveData));
-        navigate(`/movement/${moveName}/${moveWeight}}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
+        
+        if (moveData.movementWeight === '') {
+            alert('Please update the weight');
+        } else {
+            dispatch(updateMovement(moveData));
+            navigate(`/movement/${moveName}/${moveWeight}}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
+        }
     };
 
     return (
