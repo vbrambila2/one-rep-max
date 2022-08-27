@@ -92,7 +92,6 @@ const UpdatePage = () => {
            setMoveData({ movementName: moveName, movementWeight: e.target.value })
         }
     };
-    console.log(moveData, "onw");
     
     const handleSubmit = (e) => {
         e.preventDefault();
