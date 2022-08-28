@@ -12,12 +12,11 @@ class App extends React.Component {
         return (
             <div>
                 <Router >
-                  <Routes >
-                        
+                  <Routes >  
                         <Route exact path="/movement/:name/:weight" element={ <PercentPage title="One Rep - Movement" /> } ></Route>
                         <Route exact path="/add" element={ <AddPage title="One Rep - Add" /> } ></Route>
-                        <Route exact path="/update/:name" element={ <UpdatePage title="One Rep - Update" /> } ></Route>
-                        <Route exact path="/delete/:name" element={ <DeletePage title="One Rep - Delete" /> } ></Route>
+                        <Route exact path="/update/:name/:weight" element={ <UpdatePage title="One Rep - Update" /> } ></Route>
+                        <Route exact path="/delete/:name/:weight" element={ <DeletePage title="One Rep - Delete" /> } ></Route>
                         <Route exact path="/" element={ <HomePage title="One Rep - Home" /> } ></Route>
                   </Routes>
                 </Router>

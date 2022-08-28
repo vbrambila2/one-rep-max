@@ -85,6 +85,7 @@ const UpdatePage = () => {
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const moveName = location.state.movement.movementName;
     const moveWeight = location.state.movementWeight;
+    console.log(moveData, "mw");
 
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
@@ -100,7 +101,7 @@ const UpdatePage = () => {
             alert('Please update the weight');
         } else {
             dispatch(updateMovement(moveData));
-            navigate(`/movement/${moveName}/${moveWeight}}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
+            navigate(`/movement/${moveName}/${moveData.movementWeight}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
         }
     };
 

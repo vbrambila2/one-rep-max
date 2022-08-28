@@ -33,7 +33,7 @@ const ChangeButton = (props) => {
     return (
         <Button 
             className={classes.changeButton}
-            onClick={() => navigate(`/${urlName}/${location.state.movementName}`, {state: {movement}})}
+            onClick={() => navigate(`/${urlName}/${location.state.movementName}/${location.state.movementWeight}`, {state: {movement}})}
         >
         {buttonName}
         </Button> 

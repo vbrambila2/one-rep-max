@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const PercentPage = () => {
     const classes = useStyles();
     const location = useLocation();
+    console.log(location, "location");
 
     const movementFound = () => {
         if (location.state === null) {
