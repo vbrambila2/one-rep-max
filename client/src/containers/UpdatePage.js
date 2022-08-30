@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateMovement } from '../actions';
 import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
@@ -82,7 +82,6 @@ const UpdatePage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch(); 
-    const movements = useSelector((state) => state.moveReducer);
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const moveName = location.state.movementName;
     

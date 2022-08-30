@@ -71,7 +71,9 @@ const DeletePage = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch(); 
-    const moveName = location.state.movement.movementName;
+    const moveId = location.state.id;
+    const moveName = location.state.movementName;
+    console.log(moveId, "delete");
 
 
  
@@ -79,7 +81,7 @@ const DeletePage = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(deleteMovement(moveName));
+        dispatch(deleteMovement(moveId));
         navigate("/");
     };
 

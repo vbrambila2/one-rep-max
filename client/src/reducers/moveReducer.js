@@ -11,9 +11,9 @@ const moveReducer = (state = initialState, action) => {
         case UPDATE_MOVEMENT:
             return state.map((move) => move._id === action.payload._id ? action.payload : move);
         case DELETE_MOVEMENT:
-            return state.filter(move => move.movementName !== action.payload);
+            return state.filter(move => move._id !== action.payload);
         default: return state;
     }
 }
 
-export default moveReducer;
+export default moveReducer; 

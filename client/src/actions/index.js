@@ -48,9 +48,19 @@ export const updateMovement = (id, move) => async (dispatch) => {
     }
 }
 
-export function deleteMovement(move) {
-    return {
-        type: DELETE_MOVEMENT,
-        payload: move
+// export function deleteMovement(move) {
+//     return {
+//         type: DELETE_MOVEMENT,
+//         payload: move
+//     }
+// };
+
+export const deleteMovement = (id) => async (dispatch) => {
+    try {
+        await api.deleteMovement(id);
+
+        dispatch({ type: DELETE_MOVEMENT, payload: id });
+    } catch (error) {
+        console.log(error.message);
     }
-};
+}

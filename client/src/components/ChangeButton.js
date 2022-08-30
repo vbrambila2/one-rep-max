@@ -1,7 +1,6 @@
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
     changeButton: {
@@ -28,12 +27,11 @@ const ChangeButton = (props) => {
     } = props;
     const classes = useStyles();
     const navigate = useNavigate();
-    const location = useLocation();
 
     return (
         <Button 
             className={classes.changeButton}
-            onClick={() => navigate(`/${urlName}/${location.state.movementName}`, {state: {id: movement.id, movementName: movement.movementName, movementWeight: movement.movementWeight}})}
+            onClick={() => navigate(`/${urlName}/${movement.movementName}`, {state: {id: movement.id, movementName: movement.movementName, movementWeight: movement.movementWeight}})}
         >
         {buttonName}
         </Button> 

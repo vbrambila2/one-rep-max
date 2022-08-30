@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
@@ -24,9 +24,8 @@ const useStyles = makeStyles(() => ({
 const HomePage = (props) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const movements = useSelector((state) => state.moveReducer);
     const {
-        move
+        movements
     } = props;
 
     useEffect(() => {

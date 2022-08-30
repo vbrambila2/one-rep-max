@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PercentPage = () => {
+const PercentPage = (props) => {
     const classes = useStyles();
     const location = useLocation();
 
