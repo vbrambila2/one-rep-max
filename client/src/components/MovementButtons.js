@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MovementButtons = (props) => {
-    const classes = useStyles();
-    const navigate = useNavigate();
     const {
         movements
     } = props;
+    const classes = useStyles();
+    const navigate = useNavigate();
 
     const mapMoves = movements.map((movement) => {
         return (

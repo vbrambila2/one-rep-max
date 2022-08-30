@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import { deleteMovement } from '../actions/index';
-import { connect } from 'react-redux';
 import { useLocation } from 'react-router';
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -50,22 +49,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const NameLocationFunction = () => {
-    const location = useLocation();
-    const pathArray = location.pathname.split('/');
-    const movementNameURL = (pathArray[3]);
-    return movementNameURL
-};
-
-const renderInputName = ({ input, label }) => {
-    return (
-        <div>
-            <label>{label}:   </label>  
-            <input {...input} readOnly autoFocus={true} type="text" value={NameLocationFunction()} /> 
-        </div>    
-    )  
-};
-
 const DeletePage = (props) => {
     const classes = useStyles();
     const location = useLocation();
@@ -73,11 +56,7 @@ const DeletePage = (props) => {
     const dispatch = useDispatch(); 
     const moveId = location.state.id;
     const moveName = location.state.movementName;
-    console.log(moveId, "delete");
 
-
- 
- 
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -110,12 +89,4 @@ const DeletePage = (props) => {
     );
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        deleteMovement: () => {
-            dispatch(deleteMovement())
-        }
-    }
-}
-
-export default connect(mapDispatchToProps)(DeletePage);
+export default DeletePage;

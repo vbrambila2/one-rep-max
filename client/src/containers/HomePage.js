@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
 import MovementButtons from '../components/MovementButtons';
 import { getMovements } from '../actions/index';
-// import MovementsList from './FetchedMovements';
  
 const useStyles = makeStyles(() => ({
    homePageContent: {
@@ -22,11 +21,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const HomePage = (props) => {
-    const classes = useStyles();
-    const dispatch = useDispatch();
     const {
         movements
     } = props;
+    const classes = useStyles();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getMovements());
@@ -43,10 +42,4 @@ const HomePage = (props) => {
    );
 };
 
-const mapStateToProps = state => {
-    return {
-      move: state.moveReducer
-    }
-  };
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

@@ -1,6 +1,5 @@
 import { GET_MOVEMENTS, CREATE_MOVEMENT, DELETE_MOVEMENT, UPDATE_MOVEMENT } from "./constants";
 import * as api from '../api';
-import history from "../history";
 
 export const getMovements = () => async (dispatch) => {
     try {

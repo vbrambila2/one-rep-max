@@ -64,11 +64,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PercentChart = (props) => {
-    const classes = useStyles();
-    const [results, setResults] = useState([]);
     const {
         movement
     } = props;
+    const classes = useStyles();
+    const [results, setResults] = useState([]);
 
     useEffect(() => {
         const arr = [];

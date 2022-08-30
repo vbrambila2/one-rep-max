@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PercentPage = (props) => {
+const PercentPage = () => {
     const classes = useStyles();
     const location = useLocation();
 
@@ -38,4 +38,4 @@ const PercentPage = (props) => {
     );
 };
 
- export default (PercentPage);
+ export default PercentPage;

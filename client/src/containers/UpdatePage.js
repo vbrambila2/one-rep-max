@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import { updateMovement } from '../actions';
-import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
 import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router-dom';
@@ -145,13 +144,5 @@ const UpdatePage = () => {
         </div>
     );
 };
-  
-const mapDispatchToProps = dispatch => {
-    return {
-        updateMovement: () => {
-            dispatch(updateMovement())
-        }
-    }
-}
 
-export default connect(mapDispatchToProps)(UpdatePage);
+export default UpdatePage;
