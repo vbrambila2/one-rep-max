@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateMovement } from '../actions';
 import { connect } from 'react-redux';
 import { TextField, Button, InputAdornment } from '@material-ui/core';
@@ -82,14 +82,14 @@ const UpdatePage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch(); 
+    const movements = useSelector((state) => state.moveReducer);
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
-    const moveName = location.state.movement.movementName;
-    console.log(location, "location");
+    const moveName = location.state.movementName;
     
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setMoveData({ movementName: moveName, movementWeight: e.target.value })
+           setMoveData({ id: location.state.id, movementName: moveName, movementWeight: e.target.value })
         }
     };
     
@@ -99,8 +99,8 @@ const UpdatePage = () => {
         if (moveData.movementWeight === '') {
             alert('Please update the weight');
         } else {
-            dispatch(updateMovement(moveData));
-            navigate(`/movement/${moveName}/${moveData.movementWeight}`, { state: { movementName: moveName, movementWeight: moveData.movementWeight } });
+            dispatch(updateMovement(moveData.id, moveData));
+            navigate(`/movement/${moveName}/${moveData.movementWeight}`, { state: { id: location.state.id, movementName: moveName, movementWeight: moveData.movementWeight } });
         }
     };
 

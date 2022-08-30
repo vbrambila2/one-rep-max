@@ -9,7 +9,7 @@ const moveReducer = (state = initialState, action) => {
         case CREATE_MOVEMENT:
             return [ ...state, action.payload ];
         case UPDATE_MOVEMENT:
-            return state.map((move) => move.movementName === action.payload.movementName ? action.payload : move);
+            return state.map((move) => move._id === action.payload._id ? action.payload : move);
         case DELETE_MOVEMENT:
             return state.filter(move => move.movementName !== action.payload);
         default: return state;

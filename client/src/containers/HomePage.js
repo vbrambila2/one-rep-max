@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
@@ -28,7 +28,6 @@ const HomePage = (props) => {
     const {
         move
     } = props;
-    //console.log(movements, "mv"); 
 
     useEffect(() => {
         dispatch(getMovements());

@@ -33,7 +33,6 @@ const MovementButtons = (props) => {
     const {
         movements
     } = props;
-    console.log(movements, "inside mbutton");
 
     const mapMoves = movements.map((movement) => {
         return (
