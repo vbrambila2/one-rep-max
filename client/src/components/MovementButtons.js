@@ -31,16 +31,17 @@ const MovementButtons = (props) => {
     const classes = useStyles();
     const navigate = useNavigate();
     const {
-        move
+        movements
     } = props;
+    console.log(movements, "inside mbutton");
 
-    const mapMoves = move.map((movement) => {
+    const mapMoves = movements.map((movement) => {
         return (
             <Button
                 key={movement._id}
                 className={classes.movementButtons} 
                 onClick={() => navigate(`/movement/${movement.movementName}/${movement.movementWeight}`, 
-                {state: {movementName: movement.movementName, movementWeight: movement.movementWeight}})}
+                {state: {id: movement._id, movementName: movement.movementName, movementWeight: movement.movementWeight}})}
             >
             {movement.movementName} - {movement.movementWeight}
             </Button>

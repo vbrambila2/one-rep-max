@@ -28,6 +28,7 @@ const HomePage = (props) => {
     const {
         move
     } = props;
+    //console.log(movements, "mv"); 
 
     useEffect(() => {
         dispatch(getMovements());
@@ -37,7 +38,7 @@ const HomePage = (props) => {
        <div className={classes.homePageContent} >
             <Header title={"One Rep Max"} titleCaption={"- Percentage Calculator -"}/>
             <div className={classes.moveList}>
-                <MovementButtons move={move} />
+                <MovementButtons movements={movements} />
             </div>
             <FabButton />
        </div>

@@ -84,6 +84,7 @@ const UpdatePage = () => {
     const dispatch = useDispatch(); 
     const [moveData, setMoveData] = useState({ movementName:'', movementWeight: '' });
     const moveName = location.state.movement.movementName;
+    console.log(location, "location");
     
     const onChangeWeight = (e) => {
         const re = /^[0-9\b]+$/;

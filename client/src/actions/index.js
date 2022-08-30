@@ -31,12 +31,22 @@ export const createMovement = (move) => async (dispatch) => {
     }
 }
 
-export function updateMovement(move) {
-    return {
-        type: UPDATE_MOVEMENT,
-        payload: move
+// export function updateMovement(move) {
+//     return {
+//         type: UPDATE_MOVEMENT,
+//         payload: move
+//     }
+// };
+
+export const updateMovement = (id, move) => async (dispatch) => {
+    try{
+        const { data } = await api.updateMovement(id, move);
+
+        dispatch({ type: UPDATE_MOVEMENT, payload: data });
+    } catch (error) {
+        console.log(error.message);
     }
-};
+}
 
 export function deleteMovement(move) {
     return {
