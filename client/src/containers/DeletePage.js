@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const DeletePage = (props) => {
+const DeletePage = () => {
     const classes = useStyles();
     const location = useLocation();
     const navigate = useNavigate();
