@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
         textFieldDiv: {
             display: 'flex', 
+            padding: '0.5rem'
         }
     }
 }));

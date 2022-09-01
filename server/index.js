@@ -13,11 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/movements', movementRoutes);
 
-const PORT = process.env.PORT || 8000;
-
 app.get('/', (req, res) => {
     res.send('Your one rep maxes, together');
 });
+
+const PORT = process.env.PORT || 8000;
 
 mongoose.connect( process.env.CONNECTION_URL )
     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))

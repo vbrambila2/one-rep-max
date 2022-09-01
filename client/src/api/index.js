@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000/movements';
+const url = 'https://one-rep-max.herokuapp.com/movements';
 
 export const fetchMovements = () => axios.get(url);
 export const createMovement = (newMove) => axios.post(url, newMove);

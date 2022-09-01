@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: '#0099cc',
         },
     },
+    [theme.breakpoints.between('xs', 'sm')]: {
+        changeButton: {
+            width: '40%', 
+        }
+    }
 }));
 
 const ChangeButton = (props) => {

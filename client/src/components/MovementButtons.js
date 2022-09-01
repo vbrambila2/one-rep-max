@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '20px',
         textTransform: 'uppercase',
     },
+    [theme.breakpoints.between('xs', 'sm')]: {
+        movementButtons: {
+            width: '250px', 
+        }
+    }
 }));
 
 const MovementButtons = (props) => {
