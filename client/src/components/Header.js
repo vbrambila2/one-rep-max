@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
         textShadow: '1px 1px #000000',
         fontFamily: 'PT Sans Caption',
         fontSize: '20px',
-        marginLeft: '10px',
+        marginLeft: '30px',
         marginBottom: '10px',
         marginTop: '5px',
         borderRadius: '10px',
