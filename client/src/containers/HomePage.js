@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
        marginTop: '100px'
    },
    moveList: {
-       marginTop: '7rem'
+       marginTop: '5rem'
    }
 }));
 
