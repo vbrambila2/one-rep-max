@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     deleteMovementDiv: {
-        background: '#0080ff',
+        background: '#0000ff',
         fontSize: '18px',
         borderRadius: '10px',
         padding: '20px',
