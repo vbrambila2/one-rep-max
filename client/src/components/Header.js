@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 9999
     },
     homeButton: {
-        background: '#33ccff',
+        background: '#0000ff',
         boxShadow: '2px 2px 1px #006bb3',
         color: '#F8F8F8',
         textShadow: '1px 1px #000000',
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
         homeButton: {
-            background: '#33ccff',
+            background: '#0000ff',
             boxShadow: '2px 2px 1px #006bb3',
             color: '#F8F8F8',
             textShadow: '1px 1px #000000',
