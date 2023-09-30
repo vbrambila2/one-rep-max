@@ -73,10 +73,10 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 9999
     },
     homeButton: {
-        background: '#0000ff',
+        background: '#ffffff',
         boxShadow: '2px 2px 1px #006bb3',
-        color: '#F8F8F8',
-        textShadow: '1px 1px #000000',
+        color: '#000000',
+        //textShadow: '1px 1px #000000',
         fontFamily: 'PT Sans Caption',
         fontSize: '20px',
         marginLeft: '30px',
@@ -93,10 +93,10 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
         homeButton: {
-            background: '#0000ff',
+            background: '#ffffff',
             boxShadow: '2px 2px 1px #006bb3',
-            color: '#F8F8F8',
-            textShadow: '1px 1px #000000',
+            color: '#000000',
+            //textShadow: '1px 1px #000000',
             fontFamily: 'PT Sans Caption',
             fontSize: '10px',
             marginLeft: '10px',
