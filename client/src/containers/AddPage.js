@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '100px'
     },
     addMovementDiv: {
-        background: '#0000ff',
-        fontFamily: 'PT Sans Caption',
+        //background: '#0000ff',
+        //fontFamily: 'PT Sans Caption',
         fontSize: '18px',
-        borderRadius: '10px',
+        //borderRadius: '10px',
         padding: '20px',
         marginTop: '50px',
         textAlign: 'center'
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textFieldDiv: {
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#00BFFF"
+            borderColor: "#000000"
           },
           "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
             borderColor: "#0080ff"
