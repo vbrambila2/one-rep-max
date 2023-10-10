@@ -15,12 +15,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '100px'
     },
     updateMovementDiv: {
-        //background: '#0000ff',
-        //fontFamily: 'PT Sans Caption',
-        //fontSize: '18px',
-        //border: 'solid',
-        //borderRadius: '10px',
-        //boxShadow: '2px 2px 1px grey',
         padding: '20px',
         marginTop: '50px',
     },
