@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     fabDiv: {
         position: 'absolute',
-        bottom: theme.spacing(1),
+        top: theme.spacing(15),
         right: theme.spacing(2),
       },
     fab: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const FabButton = () => {
+const WeightConverter = () => {
     const classes = useStyles();
     const navigate = useNavigate();
     
@@ -32,4 +32,4 @@ const FabButton = () => {
     )
 };
 
-export default FabButton;
+export default WeightConverter;

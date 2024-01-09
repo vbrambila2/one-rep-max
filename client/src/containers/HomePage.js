@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
+import WeightConverter from '../components/WeightConverter';
 import MovementButtons from '../components/MovementButtons';
 import { getMovements } from '../actions/index';
  
@@ -37,7 +38,12 @@ const HomePage = (props) => {
             <div className={classes.moveList}>
                 <MovementButtons movements={movements} />
             </div>
-            <FabButton />
+            <div>
+                <FabButton />
+            </div> 
+            <div>
+                <WeightConverter />
+            </div> 
        </div>
    );
 };
