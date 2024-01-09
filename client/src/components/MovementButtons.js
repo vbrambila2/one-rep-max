@@ -47,7 +47,7 @@ const MovementButtons = (props) => {
                 onClick={() => navigate(`/movement/${movement.movementName}/${movement.movementWeight}`, 
                 {state: {id: movement._id, movementName: movement.movementName, movementWeight: movement.movementWeight}})}
             >
-            {movement.movementName} - {movement.movementWeight}
+            {movement.movementName} - {movement.movementWeight} lb
             </Button>
         )
     })
