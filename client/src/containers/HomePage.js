@@ -42,7 +42,7 @@ const HomePage = (props) => {
                 <FabButton />
             </div> 
             <div>
-                <WeightConverter />
+                <WeightConverter movements={movements} />
             </div> 
        </div>
    );

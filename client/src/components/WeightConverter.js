@@ -17,15 +17,23 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const WeightConverter = () => {
+const WeightConverter = (props) => {
+    const {
+        movements
+    } = props;
     const classes = useStyles();
-    const navigate = useNavigate();
+    const convert = () => {
+        const kg = movements.map((movement) => {
+            return movement.movementWeight * 0.453592
+        })
+        return kg;
+    }
     
     return (
         <div className={classes.fabDiv} >
             <Fab 
                 className={classes.fab}
-                onClick={() => navigate(`/add`)}>  
+                onClick={() => console.log(convert())}>  
                 convert
             </Fab>
         </div>   
