@@ -27,6 +27,12 @@ const HomePage = (props) => {
     } = props;
     const classes = useStyles();
     const dispatch = useDispatch();
+    const convert = (_id) => {
+        const kg = movements.map((movement) => {
+            return {_id: movement._id, movementName: movement.movementName, movementWeight: movement.movementWeight * 0.453592}   
+        })
+        return kg;
+    } 
 
     useEffect(() => {
         dispatch(getMovements());
@@ -42,7 +48,7 @@ const HomePage = (props) => {
                 <FabButton />
             </div> 
             <div>
-                <WeightConverter movements={movements} />
+                <WeightConverter onClick={convert} />
             </div> 
        </div>
    );

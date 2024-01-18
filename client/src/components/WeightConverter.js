@@ -1,6 +1,7 @@
 import Fab from '@material-ui/core/Fab';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from "react-router-dom";
+import Switch, { SwitchProps } from '@mui/material/Switch';
 
 const useStyles = makeStyles((theme) => ({
     fabDiv: {
@@ -19,23 +20,19 @@ const useStyles = makeStyles((theme) => ({
 
 const WeightConverter = (props) => {
     const {
-        movements
+        onClick
     } = props;
     const classes = useStyles();
-    const convert = () => {
-        const kg = movements.map((movement) => {
-            return movement.movementWeight * 0.453592
-        })
-        return kg;
-    }
     
     return (
         <div className={classes.fabDiv} >
-            <Fab 
-                className={classes.fab}
-                onClick={() => console.log(convert())}>  
-                convert
-            </Fab>
+            lb
+            <Switch 
+                className={classes.Switch}
+                onClick={onClick}
+                >  
+            </Switch>
+            kg
         </div>   
     )
 };
