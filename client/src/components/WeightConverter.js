@@ -20,16 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
 const WeightConverter = (props) => {
     const {
-        onClick
+        onChange,
     } = props;
     const classes = useStyles();
+    console.log(onChange, "on");
     
     return (
         <div className={classes.fabDiv} >
             lb
             <Switch 
                 className={classes.Switch}
-                onClick={onClick}
+                onChange={onChange}
                 >  
             </Switch>
             kg
