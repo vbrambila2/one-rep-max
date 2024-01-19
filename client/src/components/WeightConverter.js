@@ -7,14 +7,18 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: theme.spacing(15),
         right: theme.spacing(2),
-      },
+        padding: '0.2rem',
+        textShadow: '0.06rem 0.06rem #000000',
+        fontFamily: 'PT Sans Caption',
+        boxShadow: '0px 2px 2px #006bb3',
+        borderRadius: '0.6rem',
+        background: '#00BFFF',
+        color: '#F8F8F8'
+    },
     [theme.breakpoints.down('sm')]: {
-        switch: {
-            size:"small",
-            }
-        }
+        background: '#000000'
     }
-));
+}));
 
 const theme = createTheme({
     components: {
@@ -22,22 +26,22 @@ const theme = createTheme({
         styleOverrides: {
           switchBase: {
             // Controls default (unchecked) color for the thumb
-            color: "#00BFFF"
+            color: "#F8F8F8"
           },
           colorPrimary: {
             "&.Mui-checked": {
               // Controls checked color for the thumb
-              color: "#00BFFF"
+              color: "#F8F8F8"
             }
           },
           track: {
             // Controls default (unchecked) color for the track
-            opacity: 0.5,
-            backgroundColor: "#00BFFF",
+            opacity: 0.6,
+            backgroundColor: "#F8F8F8",
             ".Mui-checked.Mui-checked + &": {
               // Controls checked color for the track
-              opacity: 0.5,
-              backgroundColor: "#00BFFF"
+              opacity: 0.6,
+              backgroundColor: "#F8F8F8"
             }
           }
         }
@@ -65,7 +69,7 @@ const WeightConverter = (props) => {
                 >  
             </Switch>
             kg
-        </div> 
+            </div> 
         </ThemeProvider>   
     )
 };
