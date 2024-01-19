@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         top: theme.spacing(15),
         right: theme.spacing(2),
       },
-    fab: {
+    switch: {
         background: '#00BFFF',
         color: '#F8F8F8',
         '&:hover': {
@@ -23,13 +23,12 @@ const WeightConverter = (props) => {
         onChange,
     } = props;
     const classes = useStyles();
-    console.log(onChange, "on");
     
     return (
         <div className={classes.fabDiv} >
             lb
             <Switch 
-                className={classes.Switch}
+                className={classes.switch}
                 onChange={onChange}
                 >  
             </Switch>

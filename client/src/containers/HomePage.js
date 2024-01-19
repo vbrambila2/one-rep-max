@@ -33,13 +33,9 @@ const HomePage = (props) => {
         const kg = movements.map((movement) => {
             return {_id: movement._id, movementName: movement.movementName, movementWeight: movement.movementWeight * 0.453592}   
         })
-        console.log(kg, "kg");
-        return kg;
-        
+        return kg; 
     } 
-    console.log(checked, "checked");
-    console.log(setChecked, "set");
-
+    
     useEffect(() => {
         dispatch(getMovements());
     }, [dispatch])
