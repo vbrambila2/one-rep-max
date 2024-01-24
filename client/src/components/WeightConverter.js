@@ -13,10 +13,22 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0px 2px 2px #006bb3',
         borderRadius: '0.6rem',
         background: '#00BFFF',
-        color: '#F8F8F8'
+        color: '#F8F8F8',
+        display: 'flex',
+    },
+    optionDiv: {
+        display: 'flex',
+        alignItems: 'center'
     },
     [theme.breakpoints.down('sm')]: {
-        background: '#000000'
+        fabDiv: {
+            transform: 'rotate(90deg)',
+            top: theme.spacing(18.2),
+            right: theme.spacing(-3),
+        },
+        optionDiv: {
+            transform: 'rotate(-90deg)',
+        },
     }
 }));
 
@@ -49,9 +61,6 @@ const theme = createTheme({
     }
   });
 
-
-
-
 const WeightConverter = (props) => {
     const {
         onChange,
@@ -62,13 +71,14 @@ const WeightConverter = (props) => {
     return (
         <ThemeProvider theme={theme}>
             <div className={classes.fabDiv} >
-            lb
+            <div className={classes.optionDiv}>lb</div>
             <Switch 
                 checked={checked}
                 onChange={onChange}
+                className={classes.switchStyle}
                 >  
             </Switch>
-            kg
+            <div className={classes.optionDiv}>kg</div>
             </div> 
         </ThemeProvider>   
     )
