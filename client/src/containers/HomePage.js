@@ -47,7 +47,7 @@ const HomePage = (props) => {
                 <WeightConverter checked = {checked} onChange={toggleChecked} />
             </div> 
             <div className={classes.moveList}>
-                <MovementButtons movements={checked === false ? movements : convert()} />
+                <MovementButtons movements={checked === false ? movements : convert()} conversion={checked === false ? 'lb' : 'kg'} />
             </div>
             <div>
                 <FabButton />
