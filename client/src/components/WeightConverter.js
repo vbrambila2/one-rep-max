@@ -3,7 +3,7 @@ import Switch from '@mui/material/Switch';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const useStyles = makeStyles((theme) => ({
-    fabDiv: {
+    convertDiv: {
         position: 'absolute',
         top: theme.spacing(15),
         right: theme.spacing(2),
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
     },
     [theme.breakpoints.down('sm')]: {
-        fabDiv: {
+        convertDiv: {
             transform: 'rotate(90deg)',
             top: theme.spacing(18.2),
             right: theme.spacing(-3),
@@ -34,30 +34,30 @@ const useStyles = makeStyles((theme) => ({
 
 const theme = createTheme({
     components: {
-      MuiSwitch: {
-        styleOverrides: {
-          switchBase: {
-            // Controls default (unchecked) color for the thumb
-            color: "#F8F8F8"
-          },
-          colorPrimary: {
-            "&.Mui-checked": {
-              // Controls checked color for the thumb
-              color: "#F8F8F8"
+        MuiSwitch: {
+            styleOverrides: {
+                switchBase: {
+                // Controls default (unchecked) color for the thumb
+                    color: "#F8F8F8"
+                },
+                colorPrimary: {
+                    "&.Mui-checked": {
+                        // Controls checked color for the thumb
+                        color: "#F8F8F8"
+                    }
+                },
+                track: {
+                    // Controls default (unchecked) color for the track
+                    opacity: 0.6,
+                    backgroundColor: "#F8F8F8",
+                    ".Mui-checked.Mui-checked + &": {
+                        // Controls checked color for the track
+                        opacity: 0.6,
+                        backgroundColor: "#F8F8F8"
+                    }
+                }
             }
-          },
-          track: {
-            // Controls default (unchecked) color for the track
-            opacity: 0.6,
-            backgroundColor: "#F8F8F8",
-            ".Mui-checked.Mui-checked + &": {
-              // Controls checked color for the track
-              opacity: 0.6,
-              backgroundColor: "#F8F8F8"
-            }
-          }
         }
-      }
     }
   });
 
@@ -70,15 +70,15 @@ const WeightConverter = (props) => {
     
     return (
         <ThemeProvider theme={theme}>
-            <div className={classes.fabDiv} >
-            <div className={classes.optionDiv}>lb</div>
-            <Switch 
-                checked={checked}
-                onChange={onChange}
-                className={classes.switchStyle}
+            <div className={classes.convertDiv} >
+                <div className={classes.optionDiv}>lb</div>
+                <Switch 
+                    checked={checked}
+                    onChange={onChange}
+                    className={classes.switchStyle}
                 >  
-            </Switch>
-            <div className={classes.optionDiv}>kg</div>
+                </Switch>
+                <div className={classes.optionDiv}>kg</div>
             </div> 
         </ThemeProvider>   
     )
