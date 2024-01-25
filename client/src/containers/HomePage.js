@@ -14,10 +14,10 @@ const useStyles = makeStyles(() => ({
        alignItems: 'center',
    },
    newDiv: {
-       marginTop: '100px'
+       marginTop: '6.25rem'
    },
    moveList: {
-       marginTop: '5rem'
+       marginTop: '0.5rem'
    }
 }));
 
