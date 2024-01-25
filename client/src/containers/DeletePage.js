@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     buttonDiv: {
         paddingTop: '1.25rem',
     },
-    updateButton: {
+    deleteButton: {
         background: '#33ccff',
         boxShadow: '0.125rem 0.125rem 0.063rem #006bb3',
         color: '#F8F8F8',
@@ -66,7 +66,7 @@ const DeletePage = () => {
                         <div className={classes.textDiv}>{moveName}</div>
                         <div className={classes.buttonDiv}>
                             <Button 
-                                className={classes.updateButton} 
+                                className={classes.deleteButton} 
                                 variant="contained" 
                                 type="submit" 
                                 endIcon={<DeleteIcon />}

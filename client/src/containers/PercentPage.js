@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     movementFound: {
         marginTop: '5rem',
-        fontSize: '24px',
+        fontSize: '1.5rem',
         fontFamily: 'PT Sans Caption',
         display: 'flex',
         justifyContent: 'center',

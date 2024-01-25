@@ -12,16 +12,16 @@ const useStyles = makeStyles((theme) => ({
     updatePage: {
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '100px'
+        marginTop: '6.25rem'
     },
     updateMovementDiv: {
-        padding: '20px',
-        marginTop: '50px',
+        padding: '1.25rem',
+        marginTop: '3.125rem',
     },
     textDiv: {
         background: '#ffffff',
-        padding: '8px',
-        borderRadius: '10px',
+        padding: '0.5rem',
+        borderRadius: '0.625rem',
     },
     textFieldDiv: {
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
@@ -53,14 +53,13 @@ const useStyles = makeStyles((theme) => ({
           }
     },
     buttonDiv: {
-        paddingTop: '20px',
+        paddingTop: '1.25rem',
     },
     updateButton: {
         background: '#33ccff',
-        boxShadow: '2px 2px 1px #006bb3',
+        boxShadow: '0.125rem 0.125rem 0.063rem #006bb3',
         color: '#F8F8F8',
-        textShadow: '1px 1px #000000',
-        fontFamily: 'PT Sans Caption',
+        textShadow: '0.063rem 0.063rem #000000',
         '&:hover': {
             backgroundColor: '#00ace6',
         },
