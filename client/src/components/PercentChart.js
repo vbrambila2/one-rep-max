@@ -7,25 +7,25 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '10px',
+        padding: '0.625rem',
         fontFamily: 'PT Sans Caption',
-        fontSize: '18px',
+        fontSize: '1.125rem',
         marginTop: '7rem'
     },
     oneRepMaxWeightNumber: {
-        padding: '5px',
+        padding: '0.313rem',
     },
     oneRepMaxChart: {
         background: '#FFFFFF',
-        borderRadius: '10px',
+        borderRadius: '0.625rem',
         borderCollapse: 'separate',
-        borderSpacing: '10px',
+        borderSpacing: '0.625rem',
         display: 'flex',
         flexDirection: 'column',
     },
     chartHeader: {
-        padding: '5px',
-        fontSize: '24px', 
+        padding: '0.5rem',
+        fontSize: '1.5rem', 
         display: 'flex',
         justifyContent: 'space-around',
         fontFamily: 'PT Sans Caption',
@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
     },
     chartBox: {
         background: '#FFFFFF',
-        border: '1px solid #000000',
+        border: '0.1rem solid #000000',
         color: '#000000',
-        padding: '5px',
-        fontSize: '24px',
+        padding: '0.5rem',
+        fontSize: '1.5rem',
         display: 'flex',
         justifyContent: 'space-around',
         fontFamily: 'PT Sans Caption',
@@ -45,20 +45,20 @@ const useStyles = makeStyles((theme) => ({
     buttons: {
         display: 'flex',
         justifyContent: 'center',
-        paddingBottom: '20px',
+        paddingBottom: '1rem',
     },
     [theme.breakpoints.down('sm')]: {
         oneRepMaxWeight: {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '10px',
+            padding: '0.6rem',
             fontFamily: 'PT Sans Caption',
-            fontSize: '18px',
+            fontSize: '1.2rem',
             marginTop: '5.5rem'
         },
         oneRepMaxWeightNumber: {
-            padding: '5px',
+            padding: '0.5rem',
         },
     },
 }));
