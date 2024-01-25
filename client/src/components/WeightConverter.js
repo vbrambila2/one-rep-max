@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '0.2rem',
         textShadow: '0.06rem 0.06rem #000000',
         fontFamily: 'PT Sans Caption',
-        boxShadow: '0px 2px 2px #006bb3',
+        boxShadow: '0rem 0.125rem 0.125rem #006bb3',
         borderRadius: '0.6rem',
         background: '#00BFFF',
         color: '#F8F8F8',
