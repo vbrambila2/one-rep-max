@@ -7,12 +7,12 @@ const useStyles = makeStyles((theme) => ({
     movementButtons: {
         background: '#00BFFF',
         color: '#F8F8F8',
-        textShadow: '1px 1px #000000',
+        textShadow: '0.063rem 0.063rem #000000',
         fontFamily: 'PT Sans Caption',
-        marginTop: '30px',
-        borderRadius: '10px',
-        boxShadow: '0px 2px 2px #006bb3',
-        width: '400px',
+        marginTop: '2rem',
+        borderRadius: '0.625rem',
+        boxShadow: '0rem 0.125rem 0.125rem #006bb3',
+        width: '25rem',
         display: 'flex',
         flexDirection: 'column',
         '&:hover': {
@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     noMovementsMessage: {
-        marginTop: '130px',
+        marginTop: '8.125rem',
         fontFamily: 'PT Sans Caption',
-        fontSize: '20px',
+        fontSize: '1.25rem',
         textTransform: 'uppercase',
     },
     [theme.breakpoints.between('xs', 'sm')]: {
         movementButtons: {
-            width: '250px', 
+            width: '15.625rem', 
         }
     }
 }));
