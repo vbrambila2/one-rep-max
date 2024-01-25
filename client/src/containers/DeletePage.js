@@ -10,40 +10,35 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const useStyles = makeStyles((theme) => ({
     deletePage: {
-        marginTop: '100px',
+        marginTop: '6.25rem',
         display: 'flex',
         justifyContent: 'center',
     },
     deleteMovementDiv: {
-        padding: '20px',
-        marginTop: '50px',
-        width: '300px'
+        padding: '1.25rem',
+        marginTop: '3.125rem',
+        width: '18.75rem'
     },
     textDiv: {
         background: '#ffffff',
-        padding: '8px',
+        padding: '0.5rem',
         border: 'solid ',
-        borderRadius: '10px',
+        borderRadius: '0.625rem',
         display: 'flex',
         justifyContent: 'center',
         fontFamily: 'PT Sans Caption',
     },
     buttonDiv: {
-        paddingTop: '20px',
+        paddingTop: '1.25rem',
     },
     updateButton: {
         background: '#33ccff',
-        boxShadow: '2px 2px 1px #006bb3',
+        boxShadow: '0.125rem 0.125rem 0.063rem #006bb3',
         color: '#F8F8F8',
-        textShadow: '1px 1px #000000',
+        textShadow: '0.063rem 0.063rem #000000',
         '&:hover': {
             backgroundColor: '#00ace6',
         },
-    },
-    [theme.breakpoints.down('sm')]: {
-        textFieldDiv: {
-            display: 'flex', 
-        }
     }
 }));
 
