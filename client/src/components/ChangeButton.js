@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     changeButton: {
-        borderRadius: '10px',
+        borderRadius: '0.625rem',
         width: '10%',
         textAlign: 'center',
-        marginLeft: '5px',
-        marginRight: '5px',
+        marginLeft: '0.313rem',
+        marginRight: '0.313rem',
         background: '#00BFFF',
         color: '#F8F8F8',
-        boxShadow: '0px 1px 1px #006bb3',
-        textShadow: '1px 1px #000000',
+        boxShadow: '0rem 0.063rem 0.063rem #006bb3',
+        textShadow: '0.063rem 0.063rem #000000',
         '&:hover': {
             backgroundColor: '#0099cc',
         },
