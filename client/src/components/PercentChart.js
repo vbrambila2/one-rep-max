@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px',
         fontFamily: 'PT Sans Caption',
         fontSize: '18px',
-        marginTop: '100px'
+        marginTop: '7rem'
     },
     oneRepMaxWeightNumber: {
         padding: '5px',
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
             padding: '10px',
             fontFamily: 'PT Sans Caption',
             fontSize: '18px',
-            marginTop: '120px'
+            marginTop: '5.5rem'
         },
         oneRepMaxWeightNumber: {
             padding: '5px',

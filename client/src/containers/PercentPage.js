@@ -6,12 +6,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     movementFound: {
-        marginTop: '130px',
+        marginTop: '5rem',
         fontSize: '24px',
         fontFamily: 'PT Sans Caption',
         display: 'flex',
         justifyContent: 'center',
-    },
+    }
 }));
 
 const PercentPage = () => {
