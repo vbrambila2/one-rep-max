@@ -11,21 +11,18 @@ const useStyles = makeStyles((theme) => ({
     addPage: {
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '100px'
+        marginTop: '6.25rem'
     },
     addMovementDiv: {
-        //background: '#0000ff',
-        //fontFamily: 'PT Sans Caption',
-        fontSize: '18px',
-        //borderRadius: '10px',
-        padding: '20px',
-        marginTop: '50px',
+        fontSize: '1.125rem',
+        padding: '1.25rem',
+        marginTop: '3.125rem',
         textAlign: 'center'
     },
     textDiv: {
         background: '#ffffff',
-        padding: '8px',
-        borderRadius: '10px',
+        padding: '0.5rem',
+        borderRadius: '0.625rem',
     },
     textFieldDiv: {
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
@@ -58,16 +55,16 @@ const useStyles = makeStyles((theme) => ({
     },
     addButton: {
         background: '#33ccff',
-        boxShadow: '2px 2px 1px #006bb3',
+        boxShadow: '0.125rem 0.125rem 0.063rem #006bb3',
         color: '#F8F8F8',
-        textShadow: '1px 1px #000000',
+        textShadow: '0.063rem 0.063rem #000000',
         fontFamily: 'PT Sans Caption',
         '&:hover': {
             backgroundColor: '#00ace6',
         },
     },
     buttonDiv: {
-        paddingTop: '20px'
+        paddingTop: '1.25rem'
     },
     [theme.breakpoints.down('sm')]: {
         textFieldDiv: {
