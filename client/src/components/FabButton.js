@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     fabDiv: {
         position: 'absolute',
         bottom: theme.spacing(1),
-        right: theme.spacing(2),
+        right: theme.spacing(1),
       },
     fab: {
         background: '#00BFFF',
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: '#00ace6',
         },
-    },
+    }
 }));
 
 const FabButton = () => {
@@ -26,6 +26,7 @@ const FabButton = () => {
         <div className={classes.fabDiv} >
             <Fab 
                 className={classes.fab}
+                size='small'
                 onClick={() => navigate(`/add`)}>  
                 <AddIcon />      
             </Fab>
